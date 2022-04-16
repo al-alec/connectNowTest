@@ -5,7 +5,7 @@
   "private": true,
   "scripts": {
     "dev": "nuxi dev",
-    "generate": "nuxt generate",
+    "build": "nuxi build",
     "start": "node .output/server/index.mjs"
   },
   "devDependencies": {
