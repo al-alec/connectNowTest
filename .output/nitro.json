@@ -1,0 +1,6 @@
+{
+  "date": "2022-04-16T16:58:21.133Z",
+  "commands": {
+    "preview": "node ./server/index.mjs"
+  }
+}
