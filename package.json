@@ -19,6 +19,7 @@
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.13.6",
+    "@vercel/nft": "^0.18.2",
     "flat": "^5.0.2",
     "jiti": "^1.13.0",
     "rollup": "^2.70.2",
