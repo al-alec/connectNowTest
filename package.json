@@ -4,6 +4,7 @@
   },
   "private": true,
   "scripts": {
+    "install": "npm install",
     "dev": "nuxi dev",
     "build": "nuxi build",
     "start": "node .output/server/index.mjs"
