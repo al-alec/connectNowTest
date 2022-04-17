@@ -42,7 +42,7 @@
 
         <div class="flex flex-col gap-2 w-full lg:w-8/12">
 
-          <div v-if="gamelist.length >0" v-for="game in gamelist" class="flex flex-col sm:flex-row w-full">
+          <div v-if="gamelist?.length >0" v-for="game in gamelist" class="flex flex-col sm:flex-row w-full">
             <div class="sm:w-4/12 lg:w-2/12 bg-[#000000] w-full h-[160px] sm:h-[inherit]">
 
             </div>
