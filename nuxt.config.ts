@@ -27,7 +27,8 @@ export default defineNuxtConfig({
                 hid: 'description',
                 name: 'description',
                 content: 'Test Submission'
-            }
+            },
+            { 'http-equiv': 'cache-control', content: 'upgrade-insecure-requests' },
         ],
     }
 })
