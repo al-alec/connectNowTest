@@ -1,6 +1,5 @@
 {
-  "date": "2022-04-16T21:13:39.259Z",
-  "commands": {
-    "preview": "node ./server/index.mjs"
-  }
+  "date": "2022-04-16T22:46:27.050Z",
+  "preset": "nitro-prerender",
+  "commands": {}
 }
