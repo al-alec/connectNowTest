@@ -18,22 +18,6 @@
     "tailwindcss": "^3.0.24"
   },
   "dependencies": {
-    "@nuxtjs/axios": "^5.13.6",
-    "@vercel/nft": "^0.18.2",
-    "crc-32": "^1.2.2",
-    "esbuild": "^0.14.36",
-    "externality": "^0.2.1",
-    "flat": "^5.0.2",
-    "jiti": "^1.13.0",
-    "mime": "^3.0.0",
-    "rollup": "^2.70.2",
-    "rollup-plugin-visualizer": "^5.6.0",
-    "unenv": "^0.4.6",
-    "unimport": "^0.1.5",
-    "unstorage": "^0.3.3",
-    "util": "^0.12.4",
-    "vite": "^2.9.5",
-    "vite-node": "^0.9.3",
-    "vite-plugin-checker": "^0.4.6"
+    "@nuxtjs/axios": "^5.13.6"
   }
 }
