@@ -28,7 +28,6 @@ export default defineNuxtConfig({
                 name: 'description',
                 content: 'Test Submission'
             },
-            { 'http-equiv': 'Content-Security-Policy', content: 'upgrade-insecure-requests' },
         ],
     }
 })

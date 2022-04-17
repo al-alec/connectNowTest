@@ -42,7 +42,10 @@
 
         <div class="flex flex-col gap-2 w-full lg:w-8/12">
 
-          <div v-if="gamelist?.length >0" v-for="game in gamelist" class="flex flex-col sm:flex-row w-full">
+          <div v-if="loading" class="flex flex-row flex-1 justify-center items-center">
+            <p class="text-center">Loading...</p>
+          </div>
+          <div v-else-if="gamelist?.length >0" v-for="game in gamelist" class="flex flex-col sm:flex-row w-full">
             <div class="sm:w-4/12 lg:w-2/12 bg-[#000000] w-full h-[160px] sm:h-[inherit]">
 
             </div>
@@ -55,6 +58,7 @@
           <div v-else class="flex flex-row flex-1 justify-center items-center">
             <p class="text-center">No data</p>
           </div>
+
         </div>
 
       </div>
@@ -69,13 +73,15 @@ export default {
 </script>
 
 <script setup lang="ts">
-import {useGameList} from "#imports";
+import {ref, useGameList} from "#imports";
 import {Game} from "~/interfaces/Game";
 import {computed} from "#imports";
 
 
 const gamename = ref("")
 const sort = ref("name")
+let games = ref<Array<Game>>([]);
+const loading = ref(false)
 
 
 const truncate = (str: string, n: number) => {
@@ -87,8 +93,15 @@ const clearFilter = () => {
   sort.value = "name"
 }
 
-const games = ref<Array<Game>>(await useGameList())
 const gamelist = computed(() => unref(games).filter((game: Game) => gamename.value.toString().length > 0? game.name.toString().toLowerCase().includes(gamename.value.toString().toLowerCase()): unref(games) ))
+
+const getGames = async () => {
+  loading.value = true
+  games.value = await useGameList()
+  loading.value = false
+}
+
+getGames()
 
 
 </script>

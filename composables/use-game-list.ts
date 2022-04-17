@@ -8,9 +8,6 @@ export default async function (){
     const [response] = await Promise.all([
         axios.get<Array<Game>>('http://public.connectnow.org.uk/applicant-test/', {
             proxy: false,
-            headers: {
-                "Access-Control-Allow-Origin": "*",
-            }
         })
     ]);
 

@@ -5,7 +5,7 @@
         <router-link to="/">Home</router-link>
       </li>
       <li :style="$route.path == '/contact'? 'text-shadow: -16px -17px 1px rgba(206,206,194,0.43)':''">
-        <nuxt-link to="/contact">Contact</nuxt-link>
+        <router-link to="/contact">Contact</router-link>
       </li>
     </ul>
   </nav>
