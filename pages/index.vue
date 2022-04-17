@@ -42,7 +42,10 @@
 
         <div class="flex flex-col gap-2 w-full lg:w-8/12">
 
-          <div v-if="loading" class="flex flex-row flex-1 justify-center items-center">
+          <div v-if="failtoload" class="flex flex-row flex-1 justify-center items-center">
+            <p class="text-center">Fail to load data, data fetch from insecure server...</p>
+          </div>
+          <div v-else-if="loading" class="flex flex-row flex-1 justify-center items-center">
             <p class="text-center">Loading...</p>
           </div>
           <div v-else-if="gamelist?.length >0" v-for="game in gamelist" class="flex flex-col sm:flex-row w-full">
@@ -82,6 +85,7 @@ const gamename = ref("")
 const sort = ref("name")
 let games = ref<Array<Game>>([]);
 const loading = ref(false)
+const failtoload = ref(false)
 
 
 const truncate = (str: string, n: number) => {
@@ -97,8 +101,15 @@ const gamelist = computed(() => unref(games).filter((game: Game) => gamename.val
 
 const getGames = async () => {
   loading.value = true
-  games.value = await useGameList()
-  loading.value = false
+  try {
+    games.value = await useGameList()
+    loading.value = false
+  }
+  catch (e) {
+    loading.value = false
+    failtoload.value = true
+  }
+
 }
 
 getGames()
