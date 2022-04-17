@@ -43,7 +43,7 @@
         <div class="flex flex-col gap-2 w-full lg:w-8/12">
 
           <div v-if="failtoload" class="flex flex-row flex-1 justify-center items-center">
-            <p class="text-center">Fail to load data, data fetch from insecure server...</p>
+            <p class="text-center">Fail to load data, data fetch from insecure server</p>
           </div>
           <div v-else-if="loading" class="flex flex-row flex-1 justify-center items-center">
             <p class="text-center">Loading...</p>
