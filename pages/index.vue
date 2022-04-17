@@ -1,6 +1,6 @@
 <template>
     <div class="body">
-      <navbar/>
+      <Navbar/>
 
       <div class="flex flex-col lg:flex-row justify-center gap-4 px-8">
 
@@ -61,11 +61,17 @@
     </div>
 </template>
 
+<script lang="ts">
+import Navbar from "~/components/navbar.vue";
+export default {
+  components: {Navbar}
+}
+</script>
+
 <script setup lang="ts">
 import {useGameList} from "#imports";
 import {Game} from "~/interfaces/Game";
 import {computed} from "#imports";
-import Navbar from "~/components/navbar.vue";
 
 const games = ref<Array<Game>>(await useGameList())
 
