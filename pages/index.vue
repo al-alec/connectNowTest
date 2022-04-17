@@ -73,12 +73,9 @@ import {useGameList} from "#imports";
 import {Game} from "~/interfaces/Game";
 import {computed} from "#imports";
 
-const games = ref<Array<Game>>(await useGameList())
 
 const gamename = ref("")
 const sort = ref("name")
-
-const gamelist = computed(() => unref(games).filter((game: Game) => gamename.value.toString().length > 0? game.name.toString().toLowerCase().includes(gamename.value.toString().toLowerCase()): unref(games) ))
 
 
 const truncate = (str: string, n: number) => {
@@ -89,6 +86,9 @@ const clearFilter = () => {
   gamename.value = ""
   sort.value = "name"
 }
+
+const games = ref<Array<Game>>(await useGameList())
+const gamelist = computed(() => unref(games).filter((game: Game) => gamename.value.toString().length > 0? game.name.toString().toLowerCase().includes(gamename.value.toString().toLowerCase()): unref(games) ))
 
 
 </script>
